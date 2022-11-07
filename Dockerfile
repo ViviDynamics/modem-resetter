@@ -15,4 +15,4 @@ COPY bin/entrypoint /usr/bin/
 RUN chmod +x /usr/bin/entrypoint
 ENTRYPOINT ["entrypoint"]
 
-CMD ['python3', 'main.py']
+CMD ["/bin/bash", "--login", "-c", "python3 main.py"]
