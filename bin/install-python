@@ -1,0 +1,21 @@
+#! /bin/bash
+
+if [ -z "$(which pyenv)" ]
+then
+  echo "pyenv not found. Please install pyenv before continuing: https://github.com/pyenv/pyenv#getting-pyenv OR https://github.com/pyenv/pyenv-installer"
+  exit 1
+else
+  echo "Updating pyenv..."
+  pyenv update
+
+  echo "Installing python version $(cat .python-version)..."
+  pyenv install $(cat .python-version)
+
+  pip install virtualenv
+
+  python3 -m venv venv
+
+  source .venv/bin/activate
+
+  pip install -r requirements.txt
+fi

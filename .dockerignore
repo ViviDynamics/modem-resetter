@@ -1,0 +1,11 @@
+.idea
+venv
+.venv
+__pycache__
+.env
+.env.sample
+.git
+.gitattributes
+.gitignore
+*.pyc
+*.pyo
