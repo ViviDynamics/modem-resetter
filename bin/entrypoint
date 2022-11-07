@@ -2,10 +2,5 @@
 
 set -e
 
-/bin/bash -l << SCRIPT
-  echo "CD to the project directory"
-  cd /opt/modem-resetter
-
-  echo "Execute the container's main process"
-  $@
-SCRIPT
+echo "Execute the container's main process"
+exec "$@"

@@ -11,6 +11,8 @@ RUN echo "Install project dependencies" && \
     pip install -r requirements.txt
 
 RUN chmod +x /opt/modem-resetter/bin/entrypoint
-ENTRYPOINT ["/opt/modem-resetter/bin/entrypoint"]
+COPY bin/entrypoint /usr/bin/
+RUN chmod +x /usr/bin/entrypoint
+ENTRYPOINT ["entrypoint"]
 
 CMD ['python3', 'main.py']
